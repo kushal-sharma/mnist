@@ -37,6 +37,7 @@ with tf.Session() as sess:
     i = 0
     sess.run(tf.global_variables_initializer())
     for i in range(0, 20000):
+        j = 0
         for img_batch, label_batch in get_train_batches(path_mnist_train):
             train_op_, loss_ = sess.run(
                 feed_dict={
@@ -44,14 +45,14 @@ with tf.Session() as sess:
                     y: label_batch
                 },
                 fetches=[train_op, loss])
-            if i % 10 == 0:
+            j = j + 1
+            if j % 100 == 0:
                 print("Loss = ", loss_)
-        if i % 10 == 0:
-            accuracy_, = sess.run(
-                feed_dict={
-                    img: test_img,
-                    y: test_labels
-                },
-                fetches=[accuracy]
-            )
-            print("accuracy = ", accuracy_)
+        accuracy_, = sess.run(
+            feed_dict={
+                img: test_img,
+                y: test_labels
+            },
+            fetches=[accuracy]
+        )
+        print("accuracy = ", accuracy_)
