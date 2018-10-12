@@ -5,7 +5,7 @@ Deep learning concepts tried out on mnist
 Simple GAN architecture in gan.py. Generator network has two layers with leaky Relu activation with hidden layer having 128 units. 
 Optimizer used is Adam. Discriminator and generator trained alternatively for 0-8. '9' proves to be a harder one to learn so discriminator to generator training steps is 10:1.
 
-## Results for gan - 
+## Results for gan
 
 ![01](samples/0/9.png) ![01](samples/0/10.png) ![01](samples/0/11.png) ![01](samples/0/12.png)
 ![01](samples/1/8.png) ![01](samples/1/10.png) ![01](samples/1/11.png) ![01](samples/1/12.png)
